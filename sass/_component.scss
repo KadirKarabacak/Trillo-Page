@@ -209,7 +209,7 @@
 // OVERVIEW
 .overview {
     display: flex;
-    border-bottom: 1px solid var(--color-grey-light-2);
+    border-bottom: var(--line);
     align-items: center;
     &__heading {
         font-size: 2.25rem;
@@ -277,10 +277,19 @@
     display: inline-block;
     background-color: transparent;
     cursor: pointer;
-    transition: all .3s;
+    transition: margin-left .3s;
+
+    & span {
+        margin-left: .3rem;
+        transition: all .2s;
+    }
 
     &:hover {
         color: var(--color-grey-dark-1);
+
+        span{
+            margin-left: .8rem;
+        }
     }
 
     &:focus {
@@ -297,11 +306,150 @@
 
     50%{
         transform: scale(1.05);
-        box-shadow: 0 1rem 4rem rgba($color: #000000, $alpha: .25);
+        box-shadow: 0 1rem 4rem rgba(0,0,0,.25);
     }
 
     100%{
         transform: scale(1);
         box-shadow: none;
+    }
+}
+
+////////////////////////////////
+// PARAGRAPH
+.paragraph:not(:last-of-type){
+    margin-bottom: 2rem;
+}
+
+
+////////////////////////////////
+// LIST
+.list{
+    list-style: none;
+    margin: 3rem 0;
+    padding: 3rem 0;
+    border-top: var(--line);
+    border-bottom: var(--line);
+
+    display: flex;
+    flex-wrap: wrap;
+
+    &__item{
+        flex: 0 0 50%;
+        margin-bottom: .7rem;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    // Svg icon eklemek için
+    &__item::before{
+        content: "";
+        display: inline-block;
+        height: 1rem;
+        width: 1rem;
+        margin-right: .7rem;
+
+        // Eski browsers Fakat bu şekilde rengini değiştiremeyiz
+        // background-image: url(../img/chevron-thin-right.svg);
+        // background-size: cover;
+
+        // New browsers [masks]
+        background-color: var(--color-primary);
+        -webkit-mask-image: url(../img/chevron-thin-right.svg);
+        -webkit-mask-size: cover;
+        mask-image: url(../img/chevron-thin-right.svg);
+        mask-size: cover;
+    }
+}
+
+
+////////////////////////////////
+// RECOMMEND
+.recommend{
+    font-size: 1.3rem;
+    color: var(--color-grey-dark-3);
+    display: flex;
+    align-items: center;
+    
+
+    &__count{
+        margin-right: auto;
+    }
+
+    &__friends{
+
+    }
+
+    &__photo{
+        // Border eklendiğinde resimler 3px daha küçük olur, düzeltmek için
+        box-sizing: content-box;
+        height: 4rem;
+        width: 4rem;
+        border-radius: 50%;
+        border: 3px solid #fff;
+
+        &:not(:last-child){
+            margin-right: -1.5rem;
+        }
+    }
+}
+
+/////////////////////////////
+// REVIEWS
+.review {
+    background-color: #fff;
+    box-shadow: var(--shadow-light);
+    padding: 3rem;
+    margin-bottom: 3.5rem;
+    position: relative;
+    overflow: hidden;
+
+    &__text {
+        margin-bottom: 2rem;
+        z-index: 10;
+        position: relative;
+        
+    }
+
+    &__user {
+        display: flex;
+        align-items: center;
+    }
+    &__photo {
+        height: 4.5rem;
+        width: 4.5rem;
+        border-radius: 50%;
+        margin-right: 1.5rem;
+    }
+    &__user-box {
+        margin-right: auto;
+    }
+    &__user-name {
+        font-size: 1.1rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        margin-bottom: .4rem;
+    }
+    &__user-date {
+        font-size: 1rem;
+        color: var(--color-grey-dark-3);
+    }
+    &__rating {
+        font-size: 2.2rem;
+        color: var(--color-primary);
+        font-weight: 300;
+    }
+
+    &::before{
+        content: "\201C";
+        position: absolute;
+        line-height: 1;
+        top: -2.75rem;
+        left: -1rem;
+        font-size: 20rem;
+        color: var(--color-grey-light-2);
+        font-family: sans-serif;
+        z-index: 1;
     }
 }
