@@ -9,10 +9,17 @@
 // SEARCH
 .search {
   flex: 0 0 40%;
-
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media only screen and (max-width: $bp-smallest) {
+    // Arama çubuğunu alıp en sona götürür Default olarak order 0'dır.
+        order: 1;
+    // 500px'de search çubuğunu aşağıya kaydırmak için navbar genişlet
+    flex: 0 0 100%;
+  }
+
   &__input {
     font-family: inherit;
     font-size: inherit;
@@ -26,10 +33,18 @@
     // Butonun inputun üzerine çıkması için
     margin-right: -3.25rem;
 
+    @media only screen and (max-width: $bp-smallest){
+        width: 60%;
+    }
+
     &:focus {
       outline: none;
       width: 100%;
       background-color: var(--color-grey-light-3);
+
+      @media only screen and (max-width: $bp-smallest){
+        width: 70%;
+    }
     }
 
     &::placeholder {
@@ -121,11 +136,27 @@
   list-style: none;
   margin-top: 3.5rem;
 
+  @media only screen and (max-width: $bp-medium) {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 0;
+  }
+
   &__item {
     position: relative;
 
+    @media only screen and (max-width: $bp-medium) {
+        // Tüm nav öğeleri büyüyebildikleri kadar büyüsünler.
+        flex: 1;
+      }
+
     &:not(:last-child) {
       margin-bottom: 0.5rem;
+
+      @media only screen and (max-width: $bp-medium) {
+        margin: 0;
+      }
     }
   }
 
@@ -144,6 +175,16 @@
 
     // Animasyonun elementin merkezinden değil başka yerden başlamasını istersek
     // transform-origin: bottom;
+    @media only screen and (max-width: $bp-small){
+        height: 3px;
+        width: 100%;
+        transform-origin: top;
+        transition: transform 0.2s,
+      // transform animasyonu için .2s süre
+        height 0.4s cubic-bezier(1, 0, 0, 1) 0.2s,
+        background-color 0.2s;
+        transform: scaleX(0);
+    }
 
     // Hidden at start
     transform: scaleY(0);
@@ -154,6 +195,12 @@
     // elementin ortasından başlayıp kenarlara doğru açılır
     transform: scaleY(1);
     width: 100%;
+
+    @media only screen and (max-width: $bp-small){
+        height: 100%;
+        transform: scaleX(1);
+    }
+
   }
 
   &__item:active::before {
@@ -170,9 +217,19 @@
     // z-index sadece pozisyon özelliği olduğunda çalışır
     position: relative;
     z-index: 10;
-
     display: flex;
     align-items: center;
+
+    @media only screen and (max-width: $bp-medium) {
+        justify-content: center;
+        padding: 2rem;
+      }
+
+      @media only screen and (max-width: $bp-small) {
+        flex-direction: column;
+        padding: 1.5rem .5rem;
+      }
+
   }
   &__icon {
     width: 1.75rem;
@@ -180,6 +237,13 @@
     margin-right: 2rem;
     // Parent öğenin rengini alır
     fill: currentColor;
+
+    @media only screen and (max-width: $bp-small) {
+        margin-right: 0;
+        margin-bottom: .7rem;
+        width: 1.5rem;
+        height: 1.5rem;
+      }
   }
 }
 
@@ -190,6 +254,10 @@
   font-size: 1.2rem;
   text-align: center;
   padding: 2.5rem;
+
+  @media only screen and (max-width: $bp-medium){
+    display: none;
+  }
 }
 
 ///////////////////////////////////////
@@ -209,12 +277,23 @@
   display: flex;
   border-bottom: var(--line);
   align-items: center;
+
   &__heading {
     font-size: 2.25rem;
     font-weight: 300;
     text-transform: uppercase;
     letter-spacing: 1px;
     padding: 1.5rem 3rem;
+
+    @media only screen and (max-width: $bp-small){
+        font-size: 1.8rem;
+        padding: 1.25rem 2rem;
+    }
+
+    @media only screen and (max-width: $bp-smallest2){
+        font-size: 1.6rem;
+        padding: 1rem 1rem;
+    }
   }
   &__stars {
     // Öğeleri ikişer ikişer kenarlara atmak için yıldızın tüm alanı kaplamasını sağla
@@ -252,15 +331,28 @@
     padding: 0 2.25rem;
     align-items: center;
     justify-content: center;
+
+    @media only screen and (max-width: $bp-small){
+        padding: 0 1.5rem;
+        text-align: center;
+    }
   }
   &__rating-average {
     font-size: 2.2rem;
     font-weight: 300;
     margin-bottom: -3px;
+
+    @media only screen and (max-width: $bp-small){
+        font-size: 1.8rem;
+    }
   }
   &__rating-count {
     font-size: 0.8rem;
     text-transform: uppercase;
+
+    @media only screen and (max-width: $bp-small){
+        font-size: .5rem;
+    }
   }
 }
 
@@ -292,6 +384,10 @@
   &:focus {
     outline: none;
     animation: pulsate 1s infinite;
+
+    @media only screen and (max-width: $bp-small){
+
+    }
   }
 }
 
@@ -311,6 +407,7 @@
     box-shadow: none;
   }
 }
+
 
 ////////////////////////////////
 // PARAGRAPH
@@ -336,6 +433,10 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
+
+    @media only screen and (max-width: 42em ){
+        font-size: 1.25rem;
+    }
   }
 
   // Svg icon eklemek için
@@ -371,6 +472,10 @@
     margin-right: auto;
   }
 
+  &__friends{
+    display: flex;
+  }
+
   &__photo {
     // Border eklendiğinde resimler 3px daha küçük olur, düzeltmek için
     box-sizing: content-box;
@@ -380,7 +485,7 @@
     border: 3px solid #fff;
 
     &:not(:last-child) {
-      margin-right: -1.5rem;
+      margin-right: -2rem;
     }
   }
 }
@@ -394,6 +499,16 @@
   margin-bottom: 3.5rem;
   position: relative;
   overflow: hidden;
+
+  @media only screen and (max-width: $bp-medium) {
+    padding: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  @media only screen and (max-width: $bp-small){
+    margin-bottom: 2rem;
+    width: 100%;
+  }
 
   &__text {
     margin-bottom: 2rem;
@@ -448,6 +563,10 @@
 .cta {
   padding: 3.5rem 0;
   text-align: center;
+
+  @media only screen and (max-width: $bp-medium) {
+    padding: 2.5rem 0;
+  }
 
   &__book-now {
     font-size: 2rem;
