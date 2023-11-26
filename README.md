@@ -1,8 +1,7 @@
 
-![Logo](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/th5xamgrr6se0x5ro4g6.png)
+![Logo](img/logo.png)
 
-    
-# Trillo-Page
+# 🏨 Trillo-Page
 
 Trillo is a landing page for hotel rental and travel application which i create for practice flex structure.
 
@@ -21,8 +20,8 @@ Trillo is a landing page for hotel rental and travel application which i create 
 * HTML5
 * CSS3
 * <a href="https://icomoon.io/"> IcoMoon svg provider </a>
-## Ekran Görüntüleri
+## Screenshots
 
-![Uygulama Ekran Görüntüsü]()
+![Uygulama Ekran Görüntüsü](img/trillo-1.png)
 
-  
+![Uygulama Ekran Görüntüsü](img/trillo-2.png)
