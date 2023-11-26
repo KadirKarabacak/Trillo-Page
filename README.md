@@ -3,7 +3,8 @@
 
 # 🏨 Trillo-Page
 
-Trillo is a landing page for hotel rental and travel application which i create for practice flex structure.
+Trillo is a landing page for hotel rental and travel application which i create for practice flex structure. <br>
+I aim to make this site really useful by adding many Javascript features in the future.
 
 ## What features do I have in this application?
 
