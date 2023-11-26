@@ -21,8 +21,16 @@ I aim to make this site really useful by adding many Javascript features in the 
 * HTML5
 * CSS3
 * <a href="https://icomoon.io/"> IcoMoon svg provider </a>
+
+## Dev dependencies about NPM 
+* autoprefixer: ^10.4.16,
+* globby": ^14.0.0,
+* npm-run-all: ^4.1.5,
+* postcss-cli: ^10.1.0,
+* sass: ^1.69.5
 ## Screenshots
 
 ![Uygulama Ekran Görüntüsü](img/trillo-1.png)
 
 ![Uygulama Ekran Görüntüsü](img/trillo-2.png)
+
