@@ -6,6 +6,9 @@
 Trillo is a landing page for hotel rental and travel application which i create for practice flex structure. <br>
 I aim to make this site really useful by adding many Javascript features in the future.
 
+<h3>You can check the live-version 🔴 <a href="https://trillo-page-demo.netlify.app/">Trillo-Page</a></h3>
+<br>
+
 ## What features do I have in this application?
 
 * Nice hover effects on navigation bar and CTA.
